@@ -179,6 +179,13 @@ export class LanguageManager {
                     jagad_desc: [
                         "Mengembangkan dan memelihara aplikasi pemesanan travel berbasis web (travelcar.co.id).",
                         "Berkolaborasi dengan pemangku kepentingan untuk menghadirkan solusi reservasi online yang andal."
+                    ],
+                    primasoft_role: "Web Developer",
+                    primasoft_company: "Primasoft Informa (Malang, Indonesia)",
+                    primasoft_period: "Jan 2012 – Feb 2013",
+                    primasoft_desc: [
+                        "Mengembangkan dan memelihara aplikasi basis website Sistem Informasi Akademik (SIAKAD) MasterTI untuk SMP, SMA, dan SMK.",
+                        "Berkolaborasi dengan pemangku kepentingan untuk menghadirkan solusi yang andal."
                     ]
                 },
                 portfolio: {
