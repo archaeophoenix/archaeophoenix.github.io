@@ -85,9 +85,19 @@ export const experienceDataKeys = [
 
 export const portfolioData = [
     {
-        title: "Java Nusantara Digital (Tamhor)",
+        title: "Java Nusantara Digital",
         desc: "Digital portal and application system.",
-        url: "https://archaeophoenix.github.io/tamhor"
+        url: "https://archaeophoenix.github.io/janusdig"
+    },
+    {
+        title: "Invitation",
+        desc: "Wedding invitation website.",
+        url: "https://archaeophoenix.github.io/invitation"
+    },
+    {
+        title: "Kuwais Resto",
+        desc: "Menu and ordering system for a restaurant.",
+        url: "https://www.kuwaisgroup.com"
     },
     {
         title: "RefView",
@@ -113,6 +123,26 @@ export const portfolioData = [
         title: "Guard Of Accrued",
         desc: "Comprehensive and well-organized documentation to help developers get started quickly.",
         url: "https://guardofaccrued.great-site.net"
+    },
+    {
+        title: "Travelcar.co.id",
+        desc: "Car rental service website.",
+        url: "https://travelcar.co.id"
+    },
+    {
+        title: "cekstok.com",
+        desc: "Local artisan and merchant marketplace website.",
+        url: "https://cekstok.com"
+    },
+    {
+        title: "Company Profile I",
+        desc: "Company profile website.",
+        url: "https://archaeophoenix.github.io/hilal-1"
+    },
+    {
+        title: "Company Profile II",
+        desc: "Company profile website.",
+        url: "https://archaeophoenix.github.io/hilal-2"
     }
 ];
 

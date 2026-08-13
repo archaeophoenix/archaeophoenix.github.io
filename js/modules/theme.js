@@ -1,35 +1,68 @@
 export class ThemeManager {
     constructor() {
-        this.currentTheme = localStorage.getItem('app_theme') || 'light';
-        this.themeToggleBtn = document.getElementById('themeToggleBtn');
-        this.themeIcon = document.getElementById('themeIcon');
+        // Cek LocalStorage atau preferensi sistem (opsional)
+        this.currentTheme = localStorage.getItem('theme') || 'light';
     }
 
     init() {
-        this.applyTheme(this.currentTheme);
-
-        if (this.themeToggleBtn) {
-            this.themeToggleBtn.addEventListener('click', () => {
-                const nextTheme = this.currentTheme === 'light' ? 'dark' : 'light';
-                this.setTheme(nextTheme);
-            });
-        }
+        // Terapkan tema ke elemen <html>
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
+        
+        // Buat atau pasang event listener pada tombol tema
+        this.setupThemeToggle();
     }
 
-    applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        if (this.themeIcon) {
-            if (theme === 'dark') {
-                this.themeIcon.className = 'fa-solid fa-sun';
+    setupThemeToggle() {
+        const navContainer = document.querySelector('.nav-container');
+        if (!navContainer) return;
+
+        // Cek apakah tombol sudah ada di HTML atau belum
+        let themeBtn = document.getElementById('themeToggleBtn');
+        
+        if (!themeBtn) {
+            // Jika belum ada di HTML, buat secara otomatis dan letakkan sebelum tombol bahasa
+            const wrapper = document.createElement('div');
+            wrapper.className = 'theme-switch-wrapper';
+            wrapper.innerHTML = `
+                <button id="themeToggleBtn" class="lang-btn" title="Toggle Dark/Light Mode">
+                    <i id="themeIcon" class="fa-solid ${this.currentTheme === 'dark' ? 'fa-sun' : 'fa-moon'}"></i>
+                </button>
+            `;
+            
+            const langWrapper = navContainer.querySelector('.lang-switch-wrapper');
+            if (langWrapper) {
+                navContainer.insertBefore(wrapper, langWrapper);
             } else {
-                this.themeIcon.className = 'fa-solid fa-moon';
+                navContainer.appendChild(wrapper);
+            }
+            
+            themeBtn = document.getElementById('themeToggleBtn');
+        } else {
+            // Jika tombol sudah ada di HTML, sesuaikan ikon awalnya
+            this.updateButtonIcon();
+        }
+
+        // Tambahkan event click
+        themeBtn.addEventListener('click', () => {
+            this.toggleTheme();
+        });
+    }
+
+    toggleTheme() {
+        this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
+        localStorage.setItem('theme', this.currentTheme);
+        this.updateButtonIcon();
+    }
+
+    updateButtonIcon() {
+        const icon = document.getElementById('themeIcon');
+        if (icon) {
+            if (this.currentTheme === 'dark') {
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                icon.className = 'fa-solid fa-moon';
             }
         }
-    }
-
-    setTheme(theme) {
-        this.currentTheme = theme;
-        localStorage.setItem('app_theme', theme);
-        this.applyTheme(theme);
     }
 }

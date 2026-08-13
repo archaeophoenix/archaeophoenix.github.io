@@ -8,7 +8,7 @@ class ProfileApp {
         this.langManager = new LanguageManager();
         this.renderer = new ComponentRenderer(this.langManager);
         this.navController = new NavigationController();
-        this.themeManager = new ThemeManager();
+        this.themeManager = new ThemeManager(); // <--- Sudah ada
     }
 
     start() {

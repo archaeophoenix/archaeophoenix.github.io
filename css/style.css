@@ -1,37 +1,30 @@
 /* Theme Variables */
 :root {
-    /* Light Theme (Default) */
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
     --bg-color: #f8fafc;
     --card-bg: #ffffff;
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --border-color: #e2e8f0;
-    --accent-color: #0ea5e9;
-    --nav-bg: rgba(255, 255, 255, 0.95);
+    --primary-color: #2563eb;
     --chip-bg: #f1f5f9;
     --chip-hover: #e2e8f0;
     --active-link-bg: #eff6ff;
+    --nav-bg: rgba(255, 255, 255, 0.95);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --radius: 12px;
 }
 
 [data-theme="dark"] {
-    /* Dark Theme */
-    --primary-color: #60a5fa;
-    --primary-hover: #93c5fd;
     --bg-color: #0f172a;
     --card-bg: #1e293b;
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --border-color: #334155;
-    --accent-color: #38bdf8;
-    --nav-bg: rgba(30, 41, 59, 0.95);
+    --primary-color: #60a5fa;
     --chip-bg: #334155;
     --chip-hover: #475569;
     --active-link-bg: #1e293b;
+    --nav-bg: rgba(30, 41, 59, 0.95);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
 }
@@ -429,6 +422,31 @@ body {
 .mobile-nav-item.active {
     color: var(--primary-color);
     font-weight: 700;
+}
+
+/* Styling tambahan untuk tombol tema di Navbar */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+#themeToggleBtn {
+    background: var(--chip-bg);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+#themeToggleBtn:hover {
+    background: var(--chip-hover);
+    color: var(--primary-color);
 }
 
 /* Responsive Media Queries */
