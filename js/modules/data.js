@@ -2,12 +2,12 @@ export const skillsData = [
     {
         key: "fullstack",
         icon: "fa-solid fa-code",
-        items: ["PHP", "Laravel", "Symfony", "CodeIgniter", "HTML5", "CSS3", "Node.js", "JavaScript", "jQuery", "AJAX"]
+        items: ["PHP", "Laravel", "Symfony", "CodeIgniter", "HTML5", "CSS3", "Node.js", "JavaScript", "jQuery", "AJAX", "Bootstrap", "Golang", "Flutter"]
     },
     {
         key: "database",
         icon: "fa-solid fa-database",
-        items: ["MySQL", "MariaDB", "PostgreSQL", "MongoDB", "Database Design", "Query Optimization", "Performance Tuning"]
+        items: ["MySQL", "MariaDB", "PostgreSQL", "MongoDB", "Database Design", "Query Optimization", "Performance Tuning", "Data Migration", "Backup & Recovery", "Replication & Clustering", "MongoDB"]
     },
     {
         key: "devops",
